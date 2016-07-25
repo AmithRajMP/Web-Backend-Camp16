@@ -1,0 +1,19 @@
+<ul>
+	<li>
+	 taskname={{task.taskname}}</br> 
+     taskstatus={{task.status}}</br>
+     task description={{task.taskdes}}</br>
+     taskpriority={{task.taskpriority}}</br>
+     taskdate={{task.taskdate}}</br>
+     projectname={{task.projectname}}</br>
+	</li>
+</ul>
+<p>Type New Details and click Update</p></br>
+<form method="POST" action="/update/{{task.id}}">
+  <input type="text" name="newtaskname" placeholder="Task Name" value="{{task.taskname}}"/></br>
+  <input type="text" name="newtaskdescription" placeholder="Task Description" value="{{task.taskdes}}"/></br>
+  <input type="text" name="newtaskpriority" placeholder="Task Priority" value="{{task.taskpriority}}"/></br>
+  <input type="text" name="newtaskdate" placeholder="Task Date" value="{{task.taskdate}}" /></br>
+  <input type="text" name="newprojectname" placeholder="Project Name" value="{{task.projectname}}"/></br>
+  <button type="submit"> Update Task </button>
+</form>

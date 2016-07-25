@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Manager</title>
+</head>
+<body>
+    <div>
+        <form action="/add" method="post">
+            Name : <input type="text" name="name" placeholder="Name of the Note"><br>
+            Status : <input type="text" name="status" placeholder="Status of the note"><br>
+            Project : <input type="text" name="project" placeholder="Name of the Project"><br>
+            Description : <textarea name="description" placeholder="Describe here">
+                Type Description here
+            </textarea><br>
+            Deadline : <input type="text" name="duedate" placeholder="Deadline"><br>
+            <input type="submit" value="Add">
+        </form>
+        <br>
+        Existing Task Details :<br>
+        {% for todo in todos %}
+            Name : {{ todo[0] }}<br>
+            Status : {{ todo[1] }}<br>
+            Project Name : {{ todo[2] }}<br>
+            Description : {{ todo[3] }}<br>
+            Duedate : {{ todo[4] }}<br>
+            <a href="/delete?name={{ todo[0] }}">Delete this note</a> <br>  <!--prone to cross site scripting attacks-->
+            <a href="/todo?name={{ todo[0] }}">Edit this note</a><br>   <!--User can edit or delete by entering the names in URL-->
+        {% endfor %}
+    </div>
+</body>
+</html>

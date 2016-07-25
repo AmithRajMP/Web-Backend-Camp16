@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Todo</title>
+</head>
+<body>
+    <form action="/edit" method="post">
+        Name:<input type="text" name="name" value="{{ todo[0] }}" ><br>
+        Status<input type="text" name="status" value="{{ todo[1] }}"><br>
+        Project:<input type="text" name="project" value="{{ todo[2] }}"><br>
+        Description:<textarea name="description" value="{{ todo[3] }}">
+        </textarea><br>
+        Duedate:<input type="text" name="duedate" placeholder="Deadline" value="{{ todo[4] }}"><br>
+        <input type="submit" value="Edit Note">
+    </form>
+</body>
+</html>

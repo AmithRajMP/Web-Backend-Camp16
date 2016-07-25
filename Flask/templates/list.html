@@ -1,0 +1,26 @@
+<ul>
+  {% for task in todos %}
+<li> taskname={{task.taskname}}</br> 
+     taskstatus={{task.status}}</br>
+     task description={{task.taskdes}}</br>
+     taskpriority={{task.taskpriority}}</br>
+     taskdate={{task.taskdate}}</br>
+     projectname={{task.projectname}}</br>
+</li>
+  <a href="/delete/{{task.id}}">Delete</a>
+  <a href="/changestatus/{{task.id}}">Toggle status</a>
+  <a href="/edit/{{task.id}}">Edit Task Details</a>
+  {% else %}
+    No tasks Found
+  {% endfor %}
+</ul>
+
+<form method="POST" action="/add/">
+  <input type="text" name="taskname" placeholder="Task Name"/></br>
+  <input type="text" name="taskdescription" placeholder="Task Description" /></br>
+  <input type="text" name="taskpriority" placeholder="Task Priority" /></br>
+  <input type="text" name="taskdate" placeholder="Task Date" /></br>
+  <input type="text" name="projectname" placeholder="Project Name"/></br>
+  <button type="submit"> Add new Task </button>
+</form>
+

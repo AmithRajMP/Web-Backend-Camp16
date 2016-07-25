@@ -1,0 +1,2 @@
+WSGI - web server gateway interface
+ORM - Object relational mapping
